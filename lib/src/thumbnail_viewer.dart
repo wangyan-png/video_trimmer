@@ -43,9 +43,12 @@ class ThumbnailViewer extends StatelessWidget {
         quality: quality,
       );
       // if current thumbnail is null use the last thumbnail
-      if (_bytes == null) {
+      if (_bytes != null) {
+        _lastBytes = _bytes;
+      } else {
         _bytes = _lastBytes;
       }
+
       _byteList.add(_bytes);
 
       yield _byteList;
